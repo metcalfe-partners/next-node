@@ -5,31 +5,44 @@ import dayjs from 'dayjs';
 
 import { config } from '@/config';
 import { Budget } from '@/components/dashboard/overview/budget';
-import { LatestOrders } from '@/components/dashboard/overview/latest-orders';
+import { AssignedTasksTable } from '@/components/dashboard/overview/assigned-task-table';
 import { LatestProducts } from '@/components/dashboard/overview/latest-products';
 import { Sales } from '@/components/dashboard/overview/sales';
 import { TasksProgress } from '@/components/dashboard/overview/tasks-progress';
 import { TotalCustomers } from '@/components/dashboard/overview/total-customers';
 import { TotalProfit } from '@/components/dashboard/overview/total-profit';
 import { Traffic } from '@/components/dashboard/overview/traffic';
+import { ProjectProgressCard } from '@/components/dashboard/overview/ProjectProgressCard';
+import { Box } from '@mui/material';
 
 export const metadata = { title: `Overview | Dashboard | ${config.site.name}` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
   return (
     <Grid container spacing={3}>
+      <Grid lg={8} sm={6} xs={12}>
+          <Box sx={{ p: 3 }}>
+          <ProjectProgressCard
+            progressPercentage={78}
+            tasksCompletedCount={66}
+            workersCount={14}
+            milestonesNotCompletedCount={16}
+          />
+        </Box>
+      </Grid>
       <Grid lg={3} sm={6} xs={12}>
         <Budget diff={12} trend="up" sx={{ height: '100%' }} value="$24k" />
       </Grid>
-      <Grid lg={3} sm={6} xs={12}>
+     
+      {/* <Grid lg={3} sm={6} xs={12}>
         <TotalCustomers diff={16} trend="down" sx={{ height: '100%' }} value="1.6k" />
-      </Grid>
-      <Grid lg={3} sm={6} xs={12}>
+      </Grid> */}
+      {/* <Grid lg={3} sm={6} xs={12}>
         <TasksProgress sx={{ height: '100%' }} value={75.5} />
-      </Grid>
-      <Grid lg={3} sm={6} xs={12}>
+      </Grid> */}
+      {/* <Grid lg={3} sm={6} xs={12}>
         <TotalProfit sx={{ height: '100%' }} value="$15k" />
-      </Grid>
+      </Grid> */}
       <Grid lg={8} xs={12}>
         <Sales
           chartSeries={[
@@ -80,51 +93,57 @@ export default function Page(): React.JSX.Element {
         />
       </Grid>
       <Grid lg={8} md={12} xs={12}>
-        <LatestOrders
-          orders={[
-            {
-              id: 'ORD-007',
-              customer: { name: 'Ekaterina Tankova' },
-              amount: 30.5,
-              status: 'pending',
-              createdAt: dayjs().subtract(10, 'minutes').toDate(),
-            },
-            {
-              id: 'ORD-006',
-              customer: { name: 'Cao Yu' },
-              amount: 25.1,
-              status: 'delivered',
-              createdAt: dayjs().subtract(10, 'minutes').toDate(),
-            },
-            {
-              id: 'ORD-004',
-              customer: { name: 'Alexa Richardson' },
-              amount: 10.99,
-              status: 'refunded',
-              createdAt: dayjs().subtract(10, 'minutes').toDate(),
-            },
-            {
-              id: 'ORD-003',
-              customer: { name: 'Anje Keizer' },
-              amount: 96.43,
-              status: 'pending',
-              createdAt: dayjs().subtract(10, 'minutes').toDate(),
-            },
-            {
-              id: 'ORD-002',
-              customer: { name: 'Clarke Gillebert' },
-              amount: 32.54,
-              status: 'delivered',
-              createdAt: dayjs().subtract(10, 'minutes').toDate(),
-            },
-            {
-              id: 'ORD-001',
-              customer: { name: 'Adam Denisov' },
-              amount: 16.76,
-              status: 'delivered',
-              createdAt: dayjs().subtract(10, 'minutes').toDate(),
-            },
-          ]}
+        <AssignedTasksTable
+          tasks={[
+              {
+                id: 'TSK-001',
+                taskName: 'Lay Foundation',
+                taskDescription: 'Excavate and pour concrete for the building foundation.',
+                assignedTo: 'Logical',
+                deadline: new Date('2025-12-11T00:00:00Z'),
+                status: 'completed',
+              },
+              {
+                id: 'TSK-002',
+                taskName: 'Set Up Formwork',
+                taskDescription: 'Install timber or metal forms for beams and columns.',
+                assignedTo: 'Esther',
+                deadline: new Date('2025-12-21T00:00:00Z'),
+                status: 'ongoing',
+              },
+              {
+                id: 'TSK-003',
+                taskName: 'Bricklaying - Ground Floor',
+                taskDescription: 'Lay concrete blocks up to lintel level for the ground floor.',
+                assignedTo: 'Holison',
+                deadline: new Date('2025-12-05T00:00:00Z'),
+                status: 'completed',
+              },
+              {
+                id: 'TSK-004',
+                taskName: 'Roof Truss Installation',
+                taskDescription: 'Assemble and install timber trusses for the roof structure.',
+                assignedTo: 'Rosemond',
+                deadline: new Date('2025-12-08T00:00:00Z'),
+                status: 'notStarted',
+              },
+              {
+                id: 'TSK-005',
+                taskName: 'Floor Tiling - Bathrooms',
+                taskDescription: 'Lay ceramic floor tiles in all bathrooms and wet areas.',
+                assignedTo: 'Famous',
+                deadline: new Date('2026-01-09T00:00:00Z'),
+                status: 'completed',
+              },
+              {
+                id: 'TSK-006',
+                taskName: 'Paint Interior Walls',
+                taskDescription: 'Apply two coats of emulsion paint to all interior walls.',
+                assignedTo: 'Daniel',
+                deadline: new Date('2025-11-11T00:00:00Z'),
+                status: 'ongoing',
+              },
+            ]}
           sx={{ height: '100%' }}
         />
       </Grid>
