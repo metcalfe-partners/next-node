@@ -10,7 +10,11 @@ export const metadata = { title: `Sign up | Auth | ${config.site.name}` } satisf
 
 export default function Page(): React.JSX.Element {
   return (
-    <Layout>
+    <Layout asideContent={{
+    title: '!Welcome',
+    description: 'Sign Up to start creating and monitoring your projects remotely',
+    cta: { label: 'Log In', href: '/auth/sign-in' }
+  }}>
       <GuestGuard>
         <SignUpForm />
       </GuestGuard>

@@ -16,14 +16,16 @@ import EmailIcon from '@mui/icons-material/Email';
 import { authClient } from '@/lib/auth/client';
 import InputAdornment from '@mui/material/InputAdornment';
 import { paths } from '@/paths';
-
+import LockIcon from '@mui/icons-material/Lock';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
 const schema = zod.object({ email: zod.string().min(1, { message: 'Email is required' }).email() });
 
 type Values = zod.infer<typeof schema>;
 
 const defaultValues = { email: '' } satisfies Values;
 
-export function ResetPasswordForm(): React.JSX.Element {
+export function CreateNewPasswordForm(): React.JSX.Element {
   const [isPending, setIsPending] = React.useState<boolean>(false);
 
   const {
@@ -53,10 +55,9 @@ export function ResetPasswordForm(): React.JSX.Element {
   );
 
   return (
-    <Stack>
-    <Stack spacing={1}  >
-      <Typography variant="h2" align='center' color={'orange'} marginY={4} >Reset password</Typography>
-      <Typography variant="h6" align='center' color={'GrayText'} marginY={4} >
+    <Stack spacing={2}  marginY={'auto'} >
+      <Typography variant="h2" align='center' color={'orange'} marginY={2} >Create New Password</Typography>
+      <Typography variant="h6" align='center' color={'GrayText'} marginY={5} >
         A link will be provided to the provided e-mail to create a new password</Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack spacing={2} dir='ltr'>
@@ -65,12 +66,48 @@ export function ResetPasswordForm(): React.JSX.Element {
             name="email"
             render={({ field }) => (
               <FormControl error={Boolean(errors.email)}>
-                <InputLabel>Email address</InputLabel>
-                <OutlinedInput {...field} label="Email address" type="email" id="email"
+                <InputLabel htmlFor="old_password">Old Password</InputLabel>
+                <OutlinedInput {...field} label="Old Password" type="password" id="old_password"
                   sx={{ backgroundColor: '#FAE8D7' }}
                   startAdornment={
                     <InputAdornment position="start">
-                      <EmailIcon />
+                      <VpnKeyIcon />
+                    </InputAdornment>
+                  }
+                />
+                {errors.email ? <FormHelperText>{errors.email.message}</FormHelperText> : null}
+              </FormControl>
+            )}
+          />
+          <Controller
+            control={control}
+            name="email"
+            render={({ field }) => (
+              <FormControl error={Boolean(errors.email)}>
+                <InputLabel htmlFor="new_password">New Password</InputLabel>
+                <OutlinedInput {...field} label="New Password" type="password" id="new_password"
+                  sx={{ backgroundColor: '#FAE8D7' }}
+                  startAdornment={
+                    <InputAdornment position="start">
+                      <LockIcon />
+                    </InputAdornment>
+                  }
+                />
+                {errors.email ? <FormHelperText>{errors.email.message}</FormHelperText> : null}
+              </FormControl>
+            )}
+          />
+          <Controller
+            control={control}
+            name="email"
+            render={({ field }) => (
+              <FormControl error={Boolean(errors.email)}>
+                <InputLabel>Confirm New Password</InputLabel>
+                <OutlinedInput {...field} label="Confirm Password" type="password" id="password_confirmation"
+                  sx={{ backgroundColor: '#FAE8D7' }}
+                  startAdornment={
+                    <InputAdornment position="start">
+                      <EnhancedEncryptionIcon />
                     </InputAdornment>
                   }
                 />
@@ -90,12 +127,11 @@ export function ResetPasswordForm(): React.JSX.Element {
           </Button>
            <Button href={paths.auth.signIn} disabled={isPending} type="submit" variant="contained" sx={{backgroundColor:'orange',
              }}>
-            Back to Login
+            Back to Home
           </Button>
           </Stack>
         </Stack>
       </form>
-    </Stack>
     </Stack>
   );
 }
