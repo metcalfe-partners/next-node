@@ -4,7 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import dayjs from 'dayjs';
 
 import { config } from '@/config';
-import { Budget } from '@/components/dashboard/overview/budget';
+import { Budget, CameraFeedCard } from '@/components/dashboard/overview/camera-feed';
 import { AssignedTasksTable } from '@/components/dashboard/overview/assigned-task-table';
 import { LatestProducts } from '@/components/dashboard/overview/latest-products';
 import { ProjectTracking } from '@/components/dashboard/overview/project-tracking';
@@ -30,8 +30,8 @@ export default function Page(): React.JSX.Element {
 
   return (
     <Grid container spacing={3}>
-      <Grid lg={8} sm={6} xs={12}>
-          <Box sx={{ p: 3 }}>
+      <Grid lg={7} sm={6} xs={12}>
+          <Box sx={{ p: 1 }}>
           <ProjectProgressCard
             progressPercentage={78}
             tasksCompletedCount={66}
@@ -40,8 +40,15 @@ export default function Page(): React.JSX.Element {
           />
         </Box>
       </Grid>
-      <Grid lg={3} sm={6} xs={12}>
-        <Budget diff={12} trend="up" sx={{ height: '100%' }} value="$24k" />
+      <Grid lg={5} sm={6} xs={12}>
+        <CameraFeedCard
+          thumbnailSrc="https://placehold.co/100x80/E0E0E0/424242?text=Video" // Placeholder image
+          title="Feed from outside door"
+          cameraName="Camera 002"
+          cameraLocation="outside door"
+          timestamp="03:32"
+          isLive={true}
+        />
       </Grid>
      
       {/* <Grid lg={3} sm={6} xs={12}>

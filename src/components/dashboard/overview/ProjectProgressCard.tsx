@@ -61,14 +61,14 @@ export function ProjectProgressCard({
 
   return (
     <Card sx={{ ...sx, borderRadius: '12px', boxShadow: '0 4px 8px rgba(0,0,0,0.05)' }}>
-      <CardHeader title="Project Progress" sx={{ pb: 1 }} />
+      <CardHeader title="Project Progress" sx={{ pb: 0 }} />
       {/* <Divider /> */}
 
       
         <Grid
           
           spacing={1}
-          sx={{ p: 2, display: 'flex', alignItems: 'center' }}
+          sx={{ p: 0, display: 'flex', alignItems: 'center' }}
         >
           <Grid item xs={2} lg={2}>
             <svg width="120" height="120">
