@@ -7,7 +7,7 @@ import { config } from '@/config';
 import { Budget } from '@/components/dashboard/overview/budget';
 import { AssignedTasksTable } from '@/components/dashboard/overview/assigned-task-table';
 import { LatestProducts } from '@/components/dashboard/overview/latest-products';
-import { Sales } from '@/components/dashboard/overview/sales';
+import { ProjectTracking } from '@/components/dashboard/overview/project-tracking';
 import { TasksProgress } from '@/components/dashboard/overview/tasks-progress';
 import { TotalCustomers } from '@/components/dashboard/overview/total-customers';
 import { TotalProfit } from '@/components/dashboard/overview/total-profit';
@@ -20,6 +20,12 @@ export const metadata = { title: `Overview | Dashboard | ${config.site.name}` } 
 export default function Page(): React.JSX.Element {
   const budgetSeries = [40, 25, 20, 15]; // Used Funds, Total Budget, Others, Balance (approximate percentages)
   const budgetLabels = ['Total Budget', 'Used Funds', 'Others', 'Balance'];
+  const mockChartSeries = [
+    {
+      name: 'Performance',
+      data: [1, 3, 2, 3, 1, 2], // Mon (Good), Tue (Best), Wed (Better), Thurs (Best), Fri (Good), Sat (Better)
+    },
+  ];
 
 
   return (
@@ -48,13 +54,7 @@ export default function Page(): React.JSX.Element {
         <TotalProfit sx={{ height: '100%' }} value="$15k" />
       </Grid> */}
       <Grid lg={8} xs={12}>
-        <Sales
-          chartSeries={[
-            { name: 'This year', data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 20] },
-            { name: 'Last year', data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13] },
-          ]}
-          sx={{ height: '100%' }}
-        />
+        <ProjectTracking chartSeries={mockChartSeries} />
       </Grid>
       <Grid lg={4} md={6} xs={12}>
         <BudgetBreakdown chartSeries={budgetSeries} labels={budgetLabels} sx={{ height: '100%' }} />
