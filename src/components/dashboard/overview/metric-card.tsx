@@ -44,7 +44,7 @@ export function MetricCard({ bgColor = '#FF7043', value, label, sx }: MetricCard
         p: 1, // Padding around the content
         textAlign: 'center',
         // minHeight: '120px', // Minimum height to ensure consistent size
-        width: 'fit-content', // Adjust width to content
+        width: '100px', // Adjust width to content
         maxWidth: '200px', // Maximum width to prevent overflow
         height: '100px', // Fixed height for uniformity
         // Apply the background color passed in props

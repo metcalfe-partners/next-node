@@ -60,7 +60,7 @@ export default function Page(): React.JSX.Element {
         <BudgetBreakdown chartSeries={budgetSeries} labels={budgetLabels} sx={{ height: '100%' }} />
         
       </Grid>
-      <Grid lg={4} md={6} xs={12}>
+      {/* <Grid lg={4} md={6} xs={12}>
         <LatestProducts
           products={[
             {
@@ -96,8 +96,8 @@ export default function Page(): React.JSX.Element {
           ]}
           sx={{ height: '100%' }}
         />
-      </Grid>
-      <Grid lg={8} md={12} xs={12}>
+      </Grid> */}
+      <Grid lg={12} md={12} xs={12}>
         <AssignedTasksTable
           tasks={[
               {
