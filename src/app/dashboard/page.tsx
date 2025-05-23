@@ -11,13 +11,17 @@ import { Sales } from '@/components/dashboard/overview/sales';
 import { TasksProgress } from '@/components/dashboard/overview/tasks-progress';
 import { TotalCustomers } from '@/components/dashboard/overview/total-customers';
 import { TotalProfit } from '@/components/dashboard/overview/total-profit';
-import { Traffic } from '@/components/dashboard/overview/traffic';
+import { BudgetBreakdown } from '@/components/dashboard/overview/budget-breakdown';
 import { ProjectProgressCard } from '@/components/dashboard/overview/ProjectProgressCard';
 import { Box } from '@mui/material';
 
 export const metadata = { title: `Overview | Dashboard | ${config.site.name}` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
+  const budgetSeries = [40, 25, 20, 15]; // Used Funds, Total Budget, Others, Balance (approximate percentages)
+  const budgetLabels = ['Total Budget', 'Used Funds', 'Others', 'Balance'];
+
+
   return (
     <Grid container spacing={3}>
       <Grid lg={8} sm={6} xs={12}>
@@ -53,7 +57,8 @@ export default function Page(): React.JSX.Element {
         />
       </Grid>
       <Grid lg={4} md={6} xs={12}>
-        <Traffic chartSeries={[63, 15, 22]} labels={['Desktop', 'Tablet', 'Phone']} sx={{ height: '100%' }} />
+        <BudgetBreakdown chartSeries={budgetSeries} labels={budgetLabels} sx={{ height: '100%' }} />
+        
       </Grid>
       <Grid lg={4} md={6} xs={12}>
         <LatestProducts

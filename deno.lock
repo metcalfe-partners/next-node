@@ -10,6 +10,7 @@
     "npm:@fontsource/roboto-mono@5.0.18": "5.0.18",
     "npm:@hookform/resolvers@3.6.0": "3.6.0_react-hook-form@7.52.0__react@18.3.1_react@18.3.1",
     "npm:@ianvs/prettier-plugin-sort-imports@4.2.1": "4.2.1_prettier@3.3.2",
+    "npm:@mui/icons-material@^7.1.0": "7.1.0_@mui+material@5.15.20__@emotion+react@11.11.4___react@18.3.1__@emotion+styled@11.11.5___@emotion+react@11.11.4____react@18.3.1___react@18.3.1__@types+react@18.3.3__react@18.3.1__react-dom@18.3.1___react@18.3.1_@types+react@18.3.3_react@18.3.1_@emotion+react@11.11.4__react@18.3.1_@emotion+styled@11.11.5__@emotion+react@11.11.4___react@18.3.1__react@18.3.1_react-dom@18.3.1__react@18.3.1",
     "npm:@mui/lab@5.0.0-alpha.170": "5.0.0-alpha.170_@emotion+react@11.11.4__react@18.3.1_@emotion+styled@11.11.5__@emotion+react@11.11.4___react@18.3.1__react@18.3.1_@mui+material@5.15.20__@emotion+react@11.11.4___react@18.3.1__@emotion+styled@11.11.5___@emotion+react@11.11.4____react@18.3.1___react@18.3.1__@types+react@18.3.3__react@18.3.1__react-dom@18.3.1___react@18.3.1_@types+react@18.3.3_react@18.3.1_react-dom@18.3.1__react@18.3.1",
     "npm:@mui/material@5.15.20": "5.15.20_@emotion+react@11.11.4__react@18.3.1_@emotion+styled@11.11.5__@emotion+react@11.11.4___react@18.3.1__react@18.3.1_@types+react@18.3.3_react@18.3.1_react-dom@18.3.1__react@18.3.1",
     "npm:@mui/system@5.15.20": "5.15.20_@emotion+react@11.11.4__react@18.3.1_@emotion+styled@11.11.5__@emotion+react@11.11.4___react@18.3.1__react@18.3.1_@types+react@18.3.3_react@18.3.1",
@@ -797,6 +798,18 @@
     },
     "@mui/core-downloads-tracker@5.17.1": {
       "integrity": "sha512-OcZj+cs6EfUD39IoPBOgN61zf1XFVY+imsGoBDwXeSq2UHJZE3N59zzBOVjclck91Ne3e9gudONOeILvHCIhUA=="
+    },
+    "@mui/icons-material@7.1.0_@mui+material@5.15.20__@emotion+react@11.11.4___react@18.3.1__@emotion+styled@11.11.5___@emotion+react@11.11.4____react@18.3.1___react@18.3.1__@types+react@18.3.3__react@18.3.1__react-dom@18.3.1___react@18.3.1_@types+react@18.3.3_react@18.3.1_@emotion+react@11.11.4__react@18.3.1_@emotion+styled@11.11.5__@emotion+react@11.11.4___react@18.3.1__react@18.3.1_react-dom@18.3.1__react@18.3.1": {
+      "integrity": "sha512-1mUPMAZ+Qk3jfgL5ftRR06ATH/Esi0izHl1z56H+df6cwIlCWG66RXciUqeJCttbOXOQ5y2DCjLZI/4t3Yg3LA==",
+      "dependencies": [
+        "@babel/runtime",
+        "@mui/material",
+        "@types/react",
+        "react"
+      ],
+      "optionalPeers": [
+        "@types/react"
+      ]
     },
     "@mui/lab@5.0.0-alpha.170_@emotion+react@11.11.4__react@18.3.1_@emotion+styled@11.11.5__@emotion+react@11.11.4___react@18.3.1__react@18.3.1_@mui+material@5.15.20__@emotion+react@11.11.4___react@18.3.1__@emotion+styled@11.11.5___@emotion+react@11.11.4____react@18.3.1___react@18.3.1__@types+react@18.3.3__react@18.3.1__react-dom@18.3.1___react@18.3.1_@types+react@18.3.3_react@18.3.1_react-dom@18.3.1__react@18.3.1": {
       "integrity": "sha512-0bDVECGmrNjd3+bLdcLiwYZ0O4HP5j5WSQm5DV6iA/Z9kr8O6AnvZ1bv9ImQbbX7Gj3pX4o43EKwCutj3EQxQg==",
@@ -5341,6 +5354,7 @@
         "npm:@fontsource/roboto-mono@5.0.18",
         "npm:@hookform/resolvers@3.6.0",
         "npm:@ianvs/prettier-plugin-sort-imports@4.2.1",
+        "npm:@mui/icons-material@^7.1.0",
         "npm:@mui/lab@5.0.0-alpha.170",
         "npm:@mui/material@5.15.20",
         "npm:@mui/system@5.15.20",
