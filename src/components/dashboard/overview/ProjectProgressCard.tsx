@@ -61,7 +61,7 @@ export function ProjectProgressCard({
 
   return (
     <Card sx={{ ...sx, borderRadius: '12px', boxShadow: '0 4px 8px rgba(0,0,0,0.05)' }}>
-      <CardHeader title="Project Progress" sx={{ pb: 0 }} />
+      <CardHeader title="Project Progress" sx={{ pb: 0, pt: 1,  }} />
       {/* <Divider /> */}
 
       
@@ -140,10 +140,10 @@ export function ProjectProgressCard({
       
       {/* <Divider /> */}
       {/* "All milestones" link */}
-      <Box sx={{ p: 2, display: 'flex', justifyContent: 'flex-end' }}>
+      <Box sx={{ px: 2, display: 'flex', justifyContent: 'flex-end' }}>
         <Button
           component={RouterLink}
-          href="/all-milestones" // Placeholder href
+          href="#" // Placeholder href
           color="inherit"
           endIcon={<ArrowRightIcon fontSize="var(--icon-fontSize-md)" />}
           size="small"

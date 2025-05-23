@@ -31,7 +31,7 @@ export default function Page(): React.JSX.Element {
   return (
     <Grid container spacing={3}>
       <Grid lg={7} sm={6} xs={12}>
-          <Box sx={{ p: 1 }}>
+          <Box sx={{  }}>
           <ProjectProgressCard
             progressPercentage={78}
             tasksCompletedCount={66}
